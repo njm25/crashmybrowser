@@ -16,7 +16,3 @@ function generateBs(){
         i = i + 2;
     }
 }
-
-function generateB64FromInt(num){
-    return 
-}
