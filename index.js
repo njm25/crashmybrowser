@@ -3,16 +3,19 @@
 window.addEventListener('DOMContentLoaded', () => {
     console.log('Page loaded and ready!');
     console.log(window.location.href);
-    localStorage.setItem(btoa(num.toString()), btoa((num + 1).toString()));
-    sessionStorage.setItem('sessionTest', 'session hello world');        
-    // generateBs();
+    fillSessionStorage();
 });
 
-function generateBs(){
-    let i = 0;
-    while(true){
+function fillSessionStorage() {
+	let i = 0;
+	let chunk = 'X'.repeat(500_000);
 
-
-        i = i + 2;
-    }
+	try {
+		while (true) {
+			sessionStorage.setItem('data_' + i, chunk);
+			i++;
+		}
+	} catch (e) {
+		console.error(e);
+	}
 }
